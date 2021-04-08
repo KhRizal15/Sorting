@@ -1,0 +1,46 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package sort.java;
+/**
+ *
+ * @author User
+ */
+public class SortJava {
+
+    public static void main(String[] args) {
+        
+      int[] angka = {15,46,21,9,30,89,8,67,43,65,12,11,17,25,10,1,4,5,32,29,50,99,77,66,55,98,15,60,70,80,63,49,86,73,71,65,92,81,73,61,41,64,98,59,91,80,65,54,87,12};
+        System.out.println("Jumlah array = " + angka.length);
+        System.out.println("Unordered list of my array");
+        displayValues(angka);
+        selectionSort(angka);
+        displayValues(angka);
+        
+    }
+        static void selectionSort(int[] angka) {
+            int indexMin = 0;
+            for (int a = 0; a < angka.length; a++) {
+                indexMin = a;
+                for (int b = a + 1; b < angka.length; b++) {
+                    if (angka[b] < angka[indexMin]) {
+                        indexMin = b;                               
+                    }                
+                }
+                int temp = angka[a];
+                angka[a] = angka[indexMin];
+                angka[indexMin] = temp;
+                
+            }
+            System.out.println("Ordered list using selesction sort");
+    }
+        static void displayValues(int[] angka) {
+            for (int a = 0; a < angka.length; a++) {
+                System.out.print(angka[a]+ " ");               
+            }
+            System.out.println("\n");
+    }
+
+    }
